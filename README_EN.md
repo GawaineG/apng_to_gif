@@ -19,11 +19,5 @@ pip install apnggif
 4. Done. You can find those converted GIF files in `./output`.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
-## Problem
-As a beginner in coding, I currently encounter a problem:
-
-I want to encapsulate the script into an EXE file to easily send it to others, but after encapsulating it into a single EXE file with pyinstaller using the `pyinstaller -F apng_to_gif.py` command, I cannot read the path where the EXE file is stored, which means I also cannot read the "input" folder under the same path as the EXE file. After checking, I found that when the EXE is running, a temporary folder will be generated and the EXE will run in the folder, and the folder will be deleted after running.
-
-At present, I found that the EXE file generated using the `pyinstaller apng_to_gif.py` command can read the `./_internal` folder, so I changed the fifth line in this script to `os.chdir(os.path.dirname(script_path))`. After that, the EXE can be run smoothly and the conversion can be completed. But I always feel that this method is a bit tricky and not quite right. If you can solve this problem, please teach me!
 
 Contact me via e-mail: gyxgawaine@163.com
