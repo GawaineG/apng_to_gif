@@ -19,11 +19,5 @@ pip install apnggif
 4. 完成。可以在 `./output` 内找到完成转换的 GIF 文件。
 ## 许可
 [MIT](https://choosealicense.com/licenses/mit/)
-## 问题
-作为一个敲代码方面的新手，目前遇到了一个问题：
-
-我想要将脚本封装成 EXE 文件以方便地发送给他人使用，但通过 pyinstaller 使用 `pyinstaller -F apng_to_gif.py` 命令封装成单个 EXE 文件后无法读取到 EXE 文件所存储的路径，也就无法读取到与 EXE 文件在同一路径下的 input 文件夹。查阅后发现 EXE 运行时会生成一个临时文件夹并在该文件夹内运行，运行结束后会删除。
-
-目前发现使用 `pyinstaller apng_to_gif.py` 命令生成的 EXE 文件能读取到 `./_internal` 文件夹，于是我将脚本内第五行改为 `os.chdir(os.path.dirname(script_path))` 后能够顺利运行 EXE 并完成转换。但总觉得这个方法有点取巧，不太对劲，希望能得到社区大佬的指点。
 
 联系我：gyxgawaine@163.com
