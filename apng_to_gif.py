@@ -1,10 +1,17 @@
 import os
+import sys
 from apnggif import apnggif
 
-script_path = os.path.dirname(os.path.abspath(__file__))  # 获取运行时脚本所在路径
-os.chdir(script_path)  # 修改当前路径为所在目录路径
-input_dir = "./input"
-output_dir = "./output"
+# 获取运行时 EXE 或脚本所在路径
+if getattr(sys, 'frozen', False):
+    app_path = os.path.abspath(sys.executable)
+elif __file__:
+    app_path = os.path.abspath(__file__)
+script_path = os.path.dirname(app_path)
+
+os.chdir(os.path.dirname(script_path))  # 修改当前路径为所在目录路径
+input_dir = os.path.join(script_path, "input/")
+output_dir = os.path.join(script_path, "output/")
 os.makedirs(output_dir, exist_ok=True)  # 确保输出目录存在
 
 # 将 GIF 文件循环次数改为无限
